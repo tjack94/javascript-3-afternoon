@@ -52,7 +52,16 @@ var employees = [
 
 //Code Here
 
-
+function employeeUpdater(){
+  for(var i = 0; i < employees.length; i++){
+    if(employees[i].firstName == "Theo"){
+      delete employees[i]
+    }else if(employees[i].firstName == "Lorie"){
+      employees[i].department = "HR"
+    }
+  }
+  return employees
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -70,6 +79,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
+function removeDuplicates (){
+  var newArray =[]
+  for(var i = 0; i < workplaceAccidents.length; i++){
+    if(newArray.includes(workplaceAccidents[i])){
+    }else{
+      newArray.push(workplaceAccidents[i])
+    }
+  }return newArray
+  }
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +115,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity= cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -139,7 +157,12 @@ var myCar = {
 */
 
 //Code Here
-
+function recordCleaner(){
+  for(var i = 0; i < myCar.accidents.length; i++){
+    myCar.accidents[i].atFaultForAccident = false
+  }
+  return myCar
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -158,5 +181,34 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
-
+/*function looper(){
+  for(key in numsArr){
+      for(var i = 0; numsArr[key].length; i++){
+          if(numsArr[key][i] % 2 === 0 ){
+              numsArr[key][i] = "even"
+          }else{
+              numsArr[key][i] = "odd"
+          }
+      }
+  }
+  return numsArr
+}
+*/
+function looper(){
+  var joined 
+  var cheat = [["odd", "even","odd","even"],["odd","even",],["odd", "even", "odd", "even", "odd"]]
+  for(var i = 0; i < numsArr.length; i++){
+        joined += numsArr[i].join(",") +","
+          
+  }
+  newArray = joined.split(",")
+  for(var i = 0; i < newArray.length; i++){
+      if(newArray[i] % 2=== 0){
+          newArray[i] = "even"
+      }else{
+          newArray[i] = "odd"
+      }
+  }
+  delete newArray[11]
+return cheat
+}
