@@ -181,34 +181,13 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-/*function looper(){
-  for(key in numsArr){
-      for(var i = 0; numsArr[key].length; i++){
-          if(numsArr[key][i] % 2 === 0 ){
-              numsArr[key][i] = "even"
-          }else{
-              numsArr[key][i] = "odd"
-          }
-      }
-  }
-  return numsArr
-}
-*/
-function looper(){
-  var joined 
+ function looper() {
   var cheat = [["odd", "even","odd","even"],["odd","even",],["odd", "even", "odd", "even", "odd"]]
-  for(var i = 0; i < numsArr.length; i++){
-        joined += numsArr[i].join(",") +","
-          
-  }
-  newArray = joined.split(",")
-  for(var i = 0; i < newArray.length; i++){
-      if(newArray[i] % 2=== 0){
-          newArray[i] = "even"
-      }else{
-          newArray[i] = "odd"
-      }
-  }
-  delete newArray[11]
-return cheat
-}
+   for(let i = 0; i < numsArr.length; i++) {
+     for(let j = 0; j < numsArr[i].length; j++) {
+       numsArr[i][j] % 2 === 0 ? numsArr[i][j] = 'even' : numsArr[i][j] = 'odd'
+     }
+   }
+   return numsArr
+ }
+ 
